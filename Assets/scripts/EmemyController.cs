@@ -13,7 +13,6 @@ public class EmemyController : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
 
-
 	void Update ()
 	{
 		//rotate to look at the player
