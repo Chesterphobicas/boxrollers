@@ -18,8 +18,14 @@ public class EmemyController : MonoBehaviour
 		//rotate to look at the player
 		transform.rotation = Quaternion.Slerp (transform.rotation,
 			Quaternion.LookRotation (player.position - transform.position), rotationSpeed * Time.deltaTime);
-
+		float currentMoveSpeed = Random.Range (-0.01f, moveSpeed);
 		//move towards the player
-		transform.position += transform.forward * moveSpeed * Time.deltaTime;
+		transform.position += transform.forward * currentMoveSpeed * Time.deltaTime;
+
+
+		float x = Random.Range(-0.01f, 0.01f) + transform.position.x;
+		float y = 0.5f;
+		float z = Random.Range (-0.01f, 0.01f) + transform.position.z;
+		transform.position = new Vector3(x, y, z);
 	}
 }
